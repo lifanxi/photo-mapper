@@ -26,6 +26,8 @@
 #include <sys/stat.h>
 #include <time.h>
 #include <math.h>
+#include <assert.h>
+#include <errno.h>
 
 Photo::Photo() {
   gpsPos.valid = false;

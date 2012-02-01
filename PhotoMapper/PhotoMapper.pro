@@ -4,11 +4,11 @@
 QMAKE_LFLAGS -= -mthreads
 QMAKE_CFLAGS_THREAD = -mthreads
 TEMPLATE = app
-TARGET = PhotoMapper
+TARGET = photo-mapper
 DEPENDPATH += .
 INCLUDEPATH += . \
     \msys\1.0\local\include
-INCLUDEPATH += ..\..\3rdparty\quazip-0.2.1\quazip
+INCLUDEPATH += /usr/local/include/quazip
 INCLUDEPATH += ..
 
 # QTPLUGIN += qjpeg
@@ -16,6 +16,7 @@ INCLUDEPATH += ..
 RC_FILE = resources.rc
 RESOURCES = resources.qrc
 LIBS += -L../libs \
+    -L/usr/local/lib \
     -L\msys\1.0\local\lib \
     -lexiv2 \
     -lquazip \

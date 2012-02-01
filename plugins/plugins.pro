@@ -1,2 +1,2 @@
 TEMPLATE = subdirs
-SUBDIRS = tcx gpx hst nmea
+SUBDIRS = tcx gpx hst nmea trl

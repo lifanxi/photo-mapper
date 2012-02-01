@@ -1,6 +1,7 @@
 #include <nmea.h>
 #include <QFile>
 #include <QTextStream>
+#include <stdlib.h>
 
 QStringList NmeaPlugin::extensions() {
   QStringList returnList;

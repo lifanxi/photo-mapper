@@ -21,7 +21,7 @@
     www.copiks.se
 */
 
-#include "fileformatinterface.h"
+#include "fileFormatInterface.h"
 #include <gps/gpsdata.h>
 #include <QThread>
 
