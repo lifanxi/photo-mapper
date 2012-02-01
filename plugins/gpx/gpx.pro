@@ -1,0 +1,9 @@
+TEMPLATE = lib
+CONFIG += plugin
+INCLUDEPATH += ../../PhotoMapper ../..
+HEADERS = gpx.h
+SOURCES = gpx.cpp
+TARGET = gpx
+DESTDIR = ../
+LIBS += -L../../libs -lgpsdata
+QT += xml

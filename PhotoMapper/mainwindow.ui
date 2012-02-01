@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>996</width>
+    <height>748</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>COPIKS PhotoMapper</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QSplitter" name="splitter_3">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QSplitter" name="splitter">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>2</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <widget class="QFrame" name="frame_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>2</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="margin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QFrame" name="imageFrame">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>1</horstretch>
+             <verstretch>1</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout">
+            <item>
+             <widget class="QLabel" name="pictureLabel">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="acceptDrops">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>Picture Here</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="MapWidget" name="mapView">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>4</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="contextMenuPolicy">
+         <enum>Qt::NoContextMenu</enum>
+        </property>
+        <property name="url">
+         <url>
+          <string>http://copiks.se/software/photomapper/map/v07/map.html</string>
+         </url>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="frame_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>3</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QVBoxLayout">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QSplitter" name="splitter_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <widget class="PhotoListWidget" name="imageFileTable">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>2</horstretch>
+             <verstretch>1</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="acceptDrops">
+            <bool>true</bool>
+           </property>
+           <property name="sortingEnabled">
+            <bool>true</bool>
+           </property>
+           <column>
+            <property name="text">
+             <string>Filename</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>DateTime</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Adjusted time</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Lat</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>-</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Lon</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>-</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Alt</string>
+            </property>
+           </column>
+          </widget>
+          <widget class="GpsTracksWidget" name="gpsTreeWidget">
+           <column>
+            <property name="text">
+             <string>GPS Tracks</string>
+            </property>
+           </column>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QGroupBox" name="timeGroupBox">
+            <property name="title">
+             <string>Time adjustments</string>
+            </property>
+            <layout class="QHBoxLayout">
+             <property name="spacing">
+              <number>6</number>
+             </property>
+             <property name="margin">
+              <number>9</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Camera timezone</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="timezoneCombo">
+               <item>
+                <property name="text">
+                 <string>-12</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>-11</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>-10</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>-9</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>-8</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>-7</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>-6</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>-5</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>-4</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>-3:30</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>-3</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>-2</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>-1</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+1</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+2</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+3</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+3:30</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+4</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+4:30</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+5</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+5:30</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+5:45</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+6</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+6:30</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+7</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+8</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+9</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+9:30</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+10</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+11</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>+12</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>Time correction</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTimeEdit" name="timeCorrectionTimeEdit"/>
+             </item>
+             <item>
+              <widget class="QComboBox" name="timeCorrectionSignCombo">
+               <item>
+                <property name="text">
+                 <string>Fast</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Slow</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="tagButton">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Tag selected images</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="googleEarthButton">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Export to Google Earth</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>996</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionImport_GPS_data"/>
+    <addaction name="actionImport_images"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionOnline_help"/>
+    <addaction name="actionContribute"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout_Copiks_PhotoMapper"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionImport_GPS_data">
+   <property name="text">
+    <string>Import GPS data</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionOnline_help">
+   <property name="text">
+    <string>Online help</string>
+   </property>
+  </action>
+  <action name="actionAbout_Copiks_PhotoMapper">
+   <property name="text">
+    <string>About Copiks PhotoMapper</string>
+   </property>
+  </action>
+  <action name="actionImport_images">
+   <property name="text">
+    <string>Import images</string>
+   </property>
+  </action>
+  <action name="actionContribute">
+   <property name="text">
+    <string>Contribute</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKit/QWebView</header>
+  </customwidget>
+  <customwidget>
+   <class>MapWidget</class>
+   <extends>QWebView</extends>
+   <header>mapwidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>GpsTracksWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>gpstrackswidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PhotoListWidget</class>
+   <extends>QTableWidget</extends>
+   <header>photolistwidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

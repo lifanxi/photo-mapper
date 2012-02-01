@@ -1,0 +1,9 @@
+TEMPLATE = lib
+CONFIG += plugin
+INCLUDEPATH += ../../PhotoMapper ../..
+HEADERS = hst.h
+SOURCES = hst.cpp
+TARGET = hst
+DESTDIR = ../
+LIBS += -L../../libs -lgpsdata
+QT += xml
