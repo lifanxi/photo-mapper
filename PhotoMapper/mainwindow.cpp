@@ -1281,7 +1281,7 @@ void MainWindow::updateImage(const QImage &img, Photo *pht) {
 
 void MainWindow::loadPlugins() {
   QStringList filters;
-  filters  << "*.dll";
+  filters  << "*.so";
   
   // Search through the library path for dll:s that are plugins
   foreach (QString path, qApp->libraryPaths()) {
